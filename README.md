@@ -444,6 +444,25 @@ We also seperated houses from flats
 
 ## Data Interpretation
 ##### In your opinion, which 5 variables are the most important and why?
+
+As we have seen, the variables differ a lot if it is a house or a flat. 
+However, through the different regions, some variables are deeply significant:
+
+- Number of rooms
+- Its total area  
+- Locality
+
+If it is a flat, some criteria are much more correlated with the price: 
+
+- If there is a terrace
+- The living area
+
+If it a house:
+
+- The presence of a garden
+- A swimming pool
+
+
 ##### What are the most expensive municipalities in Belgium, Wallonia, Flandern and Brussels? 
 
 | #        | Mean                | Median              | Price per m²     |
@@ -464,6 +483,9 @@ We also seperated houses from flats
 
 ##### Bonus : In your opinion, which model of machine learning could solve the task of predicting the sales?
 
+- Neural network
+- Regression Models (Linear and logistic)
+- Random forest
 
 ## Usage
 This project was made in different Jupyter Notebooks.
