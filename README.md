@@ -289,7 +289,7 @@ Moreover, one can also notice differentiations between houses and flats.
   <details>
     <summary>Only Flats</summary>
   
-  ![alt text](image/Vla_corr_matrix_fmats.png "Title9")
+  ![alt text](image/Vla_corr_matrix_flats.png "Title9")
   
    </details>
 </details>
@@ -313,7 +313,7 @@ Moreover, one can also notice differentiations between houses and flats.
   <details>
     <summary>Only Flats</summary>
   
-  ![alt text](image/Bxl_corr_matrix_fmats.png "Title12")
+  ![alt text](image/Bxl_corr_matrix_flats.png "Title12")
   
    </details>
 </details>
@@ -325,7 +325,9 @@ However, we can extract a few parameters that have mostly higher correlation sco
 
 - nr_of_rooms
 - area
-- swimming_pool
+- swimming_pool (for houses)
+- Garden_area (for houses)
+- terrace (for flats)
 - sq_m_price
 - sq_m_land_price
 - region/province
@@ -338,9 +340,109 @@ However, we can extract a few parameters that have mostly higher correlation sco
 - equiped_kitchen_num
 - building_condition_num
 
+##### What are the differences between regions?
+
+As for the correlation matrices, we have divided our graphs between Belgium, Wallonia, Flandern and Brussels.
+We also seperated houses from flats
+
+<details>
+  <summary>Belgium</summary>
+  
+  <details>
+    <summary>Full dataset</summary> 
+  
+  
+  ![alt text](image/Bel_boxplot_full.png "Title1") 
+  
+  ![alt text](image/Bel_boxplot_msq_full.png "Title1") 
+  
+  </details>
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Bel_boxplot_houses.png "Title1") 
+  
+  ![alt text](image/Bel_boxplot_msq_houses.png "Title1") 
+  
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Bel_boxplot_flats.png "Title1") 
+  
+  ![alt text](image/Bel_boxplot_msq_flat.png "Title1") 
+  
+   </details>
+      
+</details>
+
+<details>
+  <summary>Wallonia</summary>
+
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Wall_boxplot_houses.png "Title1") 
+  
+  ![alt text](image/Wall_boxplot_msq_houses.png "Title1") 
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Wall_boxplot_flats.png "Title1") 
+  
+  ![alt text](image/Wall_boxplot_msq_flats.png "Title1")  
+  
+   </details>
+</details>
+
+<details>
+  <summary>Flandern</summary>
+
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Vla_boxplot_houses.png "Title1") 
+  
+  ![alt text](image/Vla_boxplot_msq_houses.png "Title1")  
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Vla_boxplot_flats.png "Title1") 
+  
+  ![alt text](image/Vla_boxplot_msq_flats.png "Title1")  
+  
+   </details>
+</details>
+
+<details>
+  <summary>Brussels</summary>
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Bxl_boxplot_houses.png "Title1") 
+  
+  ![alt text](image/Bxl_boxplot_msq_houses.png "Title1")  
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Bxl_boxplot_flats.png "Title1") 
+  
+  ![alt text](image/Bxl_boxplot_msq_flats.png "Title1")  
+  
+   </details>
+</details>
+
 ## Data Interpretation
-##### Are there any outliers? If yes, which ones and why?
-##### Which variables would you delete and why ?
 ##### In your opinion, which 5 variables are the most important and why?
 ##### What are the most expensive municipalities in Belgium, Wallonia, Flandern and Brussels? 
 
