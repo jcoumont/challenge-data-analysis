@@ -38,10 +38,17 @@ Rather than use the "whole belgian result pages" we splitted the scaping by "who
 This small change allows us to bypass the result page limitation sets by default to 333 pages of 30 results (+/- 10 .000 different entries). After a new scraping run the dataset contains not less than **53.730 real estates entries**.
 
 The initial shape is (53.730, 18)
-After the data cleaning, the final shape is (37.813, 27)
+After the data cleaning, the final shape is (37.813, 28)
 
-#### Structure
-[Acces to the dataset](data/immoweb_scrapped_2.csv) 
+![Alt text](https://i.ibb.co/gSKjyWf/Graph1.png "Difference between initial and final datasets")
+
+#### Initial structure
+
+<details>
+  <summary>View detail</summary>
+
+[View file](data/immoweb_scrapped_2.csv) 
+
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
 | 0  | locality            | int  |   zip code |
@@ -62,6 +69,48 @@ After the data cleaning, the final shape is (37.813, 27)
 | 15 | nr_of_facades       | int  |   number of facades |
 | 16 | swimming_pool       | bool |   has a swimming pool? |
 | 17 | building_condition  | str  |   state of the building (new/good/to be renovated/ ...) |
+
+</details>
+
+#### Cleaned structure
+
+<details>
+  <summary>View detail</summary>
+
+[View file](data/immoweb_cleaned_2.csv)
+
+| #  | Column              | Type |   value   |
+| :- | :------------------ | :--: | :---------|
+| 0  | locality            | int  |   zip code |
+| 1  | type_of_property    | str  |   type of property (house/appartment) |
+| 2  | subtype_of_property | str  |   subtype of property (villa/studio/mansion/loft/...) |
+| 3  | price               | int  |   price |
+| 4  | nr_of_rooms         | int  |   number of room |
+| 5  | area                | int  |   area in m2 |
+| 6  | equiped_kitchen     | str  |   type of kitchen |
+| 7  | open_fire           | bool |   has an open fire?   |
+| 8  | terrace             | bool |   has a terrace? |
+| 9  | terrace_area        | int  |   terrace area in m2 if existing |
+| 10 | garden              | bool |   has garden? |
+| 11 | garden_area         | int  |   garden area in m2 if existing |
+| 12 | total_land_area     | int  |   total land area in m2 |
+| 13 | nr_of_facades       | int  |   number of facades |
+| 14 | swimming_pool       | bool |   has a swimming pool? |
+| 15 | building_condition  | str  |   state of the building (new/good/to be renovated/ ...) | 
+| 16 | kitchen             | bool |   has kitchen ?
+| 17 | region              | str  |   region name (Wal./Bxl/Vland.)
+| 18 | province            | str  |   province name
+| 19 | sq_m_price          | float |  price / m2 (based on area)
+| 20 | sq_m_land_price     | float |  price / m2 (based on total_land_area)
+| 21 | city                | str |  city name
+| 22 | type_of_property_num | int |  type of property in int value
+| 23 | subtype_of_property_num | int | subtype of property in int value
+| 24 | equiped_kitchen_num     | int | type of equiped kitchen in int value
+| 25 | building_condition_num  | int | building condition in int value
+| 26 | region_num              | int | region in int value
+| 27 | province_num            | int | province in int value
+
+</details>
 
 ## Data cleaning
 This phase is very important to process the analysis phase.
@@ -129,6 +178,7 @@ To allow us to explore more efficiently the raw data, we added some columns:
 - kitchen - bool : True if equiped_kitchen != 'UNK','NOT_INSTALLED', 'USA_UNINSTALLED'
 - region - str : based on zip code
 - province - str : based on zip code
+- city - str : based on zip code
 - sq_m_price - float : price / area
 - sq_m_land_price - float : price / total_land_area
 
@@ -136,7 +186,7 @@ To allow us to explore more efficiently the raw data, we added some columns:
 To be able to have a good correlation map, we converted all non numeric data to numeric data.
 - bool : int (0 or 1)
 - str : int (based on dictionnary of string)
-And rounded float values to 2 decimals
+- float : float rounded at 2 decimals
 
 ##### Removing non relevant rows
 After a first analysis we identified few rows with suspect values and removed them from the dataset :
@@ -166,12 +216,24 @@ After a first analysis we identified few columns without any added value and rem
 ##### Are there any outliers? If yes, which ones and why?
 ##### Which variables would you delete and why ?
 ##### In your opinion, which 5 variables are the most important and why?
-##### What are the most expensive municipalities in Belgium? (Average price, median price, price per square meter)
-##### What are the most expensive municipalities in Wallonia? (Average price, median price, price per square meter)
-##### What are the most expensive municipalities in Flanders? (Average price, median price, price per square meter)
-##### What are the less expensive municipalities in Belgium? (Average price, median price, price per square meter)
-##### What are the less expensive municipalities in Wallonia? (Average price, median price, price per square meter)
-##### What are the less expensive municipalities in Flanders? (Average price, median price, price per square meter)
+##### What are the most expensive municipalities in Belgium, Wallonia, Flandern and Brussels? 
+
+| #        | Mean                | Median              | Price per m²     |
+|----------|---------------------|---------------------|------------------|
+| Belgium  | Wannegem-Lede       | Wannegem-Lede       | Knokke-Heist     |
+| Wallonia | Lasne               | Aubel               | Louvain-la-Neuve |
+| Flandern | Wannegem-Lede       | Wannegem-Lede       | Knokke-Heist     |
+| Brussels | Woluwe-Saint-Pierre | Woluwe-Saint-Pierre | Ixelles          |
+
+##### What are the less expensive municipalities in Belgium, Wallonia, Flandern and Brussels?  
+
+| #        | Mean         | Median       | Price per m²         |
+|----------|--------------|--------------|----------------------|
+| Belgium  | Dohan        | Dohan        | Achet                |
+| Wallonia | Dohan        | Dohan        | Achet                |
+| Flandern | Martenslinde | Martenslinde | Sint-Martens-Lierde  |
+| Brussels | Koekelberg   | Laeken       | Molenbeek-Saint-Jean |
+
 ##### Bonus : In your opinion, which model of machine learning could solve the task of predicting the sales?
 
 
