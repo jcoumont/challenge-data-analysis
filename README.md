@@ -41,10 +41,11 @@ The initial shape is (53.730, 18)
 After the data cleaning, the final shape is (37.813, 28)
 
 #### Initial structure
-[Acces to the dataset](data/immoweb_scrapped_2.csv) 
 
 <details>
   <summary>View detail</summary>
+
+[Acces to the dataset](data/immoweb_scrapped_2.csv) 
 
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
@@ -70,11 +71,12 @@ After the data cleaning, the final shape is (37.813, 28)
 </details>
 
 #### Cleaned structure
-[Acces to the dataset](data/immoweb_cleaned_2.csv)
 
 <details>
   <summary>View detail</summary>
-  
+
+[Acces to the dataset](data/immoweb_cleaned_2.csv)
+
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
 | 0  | locality            | int  |   zip code |
