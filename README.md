@@ -40,6 +40,8 @@ This small change allows us to bypass the result page limitation sets by default
 The initial shape is (53.730, 18)
 After the data cleaning, the final shape is (37.813, 28)
 
+![Alt text](https://i.ibb.co/gSKjyWf/Graph1.png "Difference between initial and final datasets")
+
 #### Initial structure
 
 <details>
@@ -214,12 +216,24 @@ After a first analysis we identified few columns without any added value and rem
 ##### Are there any outliers? If yes, which ones and why?
 ##### Which variables would you delete and why ?
 ##### In your opinion, which 5 variables are the most important and why?
-##### What are the most expensive municipalities in Belgium? (Average price, median price, price per square meter)
-##### What are the most expensive municipalities in Wallonia? (Average price, median price, price per square meter)
-##### What are the most expensive municipalities in Flanders? (Average price, median price, price per square meter)
-##### What are the less expensive municipalities in Belgium? (Average price, median price, price per square meter)
-##### What are the less expensive municipalities in Wallonia? (Average price, median price, price per square meter)
-##### What are the less expensive municipalities in Flanders? (Average price, median price, price per square meter)
+##### What are the most expensive municipalities in Belgium, Wallonia, Flandern and Brussels? 
+
+| #        | Mean                | Median              | Price per m²     |
+|----------|---------------------|---------------------|------------------|
+| Belgium  | Wannegem-Lede       | Wannegem-Lede       | Knokke-Heist     |
+| Wallonia | Lasne               | Aubel               | Louvain-la-Neuve |
+| Flandern | Wannegem-Lede       | Wannegem-Lede       | Knokke-Heist     |
+| Brussels | Woluwe-Saint-Pierre | Woluwe-Saint-Pierre | Ixelles          |
+
+##### What are the less expensive municipalities in Belgium, Wallonia, Flandern and Brussels?  
+
+| #        | Mean         | Median       | Price per m²         |
+|----------|--------------|--------------|----------------------|
+| Belgium  | Dohan        | Dohan        | Achet                |
+| Wallonia | Dohan        | Dohan        | Achet                |
+| Flandern | Martenslinde | Martenslinde | Sint-Martens-Lierde  |
+| Brussels | Koekelberg   | Laeken       | Molenbeek-Saint-Jean |
+
 ##### Bonus : In your opinion, which model of machine learning could solve the task of predicting the sales?
 
 
