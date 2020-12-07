@@ -44,6 +44,9 @@ After the data cleaning, the final shape is (37.813, 28)
 ##### Initial structure
 [Acces to the dataset](data/immoweb_scrapped_2.csv) 
 
+<details>
+  <summary>View detail</summary>
+
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
 | 0  | locality            | int  |   zip code |
@@ -64,6 +67,7 @@ After the data cleaning, the final shape is (37.813, 28)
 | 15 | nr_of_facades       | int  |   number of facades |
 | 16 | swimming_pool       | bool |   has a swimming pool? |
 | 17 | building_condition  | str  |   state of the building (new/good/to be renovated/ ...) |
+<details>
 
 ##### Cleaned structure
 [Acces to the dataset](data/immoweb_cleaned_2.csv)
