@@ -491,10 +491,10 @@ If it a house:
 ## Usage
 This project was made in different Jupyter Notebooks.
 You can run them separately
-- Data Cleaning : see data_clening.ipynb
-- Data Profiling : see data_profiling.ipynb
-- Data Analysis : see Graphs_data-analysis.ipynb
-- Data Interpretation : see this README.md file
+- Data Cleaning : see [data_clening.ipynb](data_clening.ipynb)
+- Data Profiling : see [data_profiling.ipynb](data_profiling.ipynb)
+- Data Analysis : see [Graphs_data-analysis.ipynb](Graphs_data-analysis.ipynb)
+- Data Interpretation : see this [README.md](README.md)
 
 ## Installation
 To run these different Jupyter Notebooks, you need these python module:
