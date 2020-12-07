@@ -220,19 +220,19 @@ After a first analysis we identified few columns without any added value and rem
 
 | #        | Mean                | Median              | Price per m²     |
 |----------|---------------------|---------------------|------------------|
-| Belgium  | Wannegem-Lede       | Wannegem-Lede       | Knokke-Heist     |
-| Wallonia | Lasne               | Aubel               | Louvain-la-Neuve |
-| Flandern | Wannegem-Lede       | Wannegem-Lede       | Knokke-Heist     |
-| Brussels | Woluwe-Saint-Pierre | Woluwe-Saint-Pierre | Ixelles          |
+| Belgium  | 9772 Wannegem-Lede       | 9772 Wannegem-Lede       | 8300 Knokke-Heist     |
+| Wallonia | 1380 Lasne               | 4880 Aubel               | 1348 Louvain-la-Neuve |
+| Flandern | 9772 Wannegem-Lede       | 9772 Wannegem-Lede       | 8300 Knokke-Heist     |
+| Brussels | 1150 Woluwe-Saint-Pierre | 1150 Woluwe-Saint-Pierre | 1050 Ixelles          |
 
 ##### What are the less expensive municipalities in Belgium, Wallonia, Flandern and Brussels?  
 
 | #        | Mean         | Median       | Price per m²         |
 |----------|--------------|--------------|----------------------|
-| Belgium  | Dohan        | Dohan        | Achet                |
-| Wallonia | Dohan        | Dohan        | Achet                |
-| Flandern | Martenslinde | Martenslinde | Sint-Martens-Lierde  |
-| Brussels | Koekelberg   | Laeken       | Molenbeek-Saint-Jean |
+| Belgium  | 6836 Dohan        | 6836 Dohan        | 5362 Achet                |
+| Wallonia | 6836 Dohan        | 6836 Dohan        | 5362 Achet                |
+| Flandern | 3742 Martenslinde | 3742 Martenslinde | 9572 Sint-Martens-Lierde  |
+| Brussels | 1081 Koekelberg   | 1020 Laeken       | 1080 Molenbeek-Saint-Jean |
 
 ##### Bonus : In your opinion, which model of machine learning could solve the task of predicting the sales?
 
