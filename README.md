@@ -3,8 +3,6 @@
 - Deadline: `7/12/2020 13:30`
 - Team challenge : 3
 
-[TOC]
-
 ## Team members
 - [Jérôme Coumont](https://githib.com/jcoumont)
 - [Ousmane Diop](https://githib.com/Nooreyni)
