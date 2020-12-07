@@ -204,13 +204,139 @@ After a first analysis we identified few columns without any added value and rem
 
 ## Data Analysis
 ##### Which variable is the target ?
+
+The goal of this project is to be able to predict the price of a new given property based on its features. 
+Therefore, the target variable is the price.
+
 ##### How many rows and columns ?
-##### What is the correlation between the variables and the target ? (Why might that be?)
-##### What is the correlation between the variables and the other variables ? (Why?)
+
+Counting our new dataset and columns added or remove during the cleaning:
+
+- **37.813** rows
+- **28** columns
+
+##### What is the correlation between the variables, the variables and the target ?
+
+One can find below the correlation matrices for Belgium, Wallonia, Flandern and Brussels.
+For Belgium, the correlation of all variables will be displayed. Then, only the target correlation will be exposed.
+Moreover, one can also notice differentiations between houses and flats.
+
+<details>
+  <summary>Belgium</summary>
+  
+  <details>
+    <summary>Full dataset</summary> 
+  
+  ![alt text](image/Bel_corr_matrix_full.png "Title1")     
+  
+  </details>
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Bel_corr_matrix_houses.png "Title2")
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Bel_corr_matrix_fmats.png "Title3")
+  
+   </details>
+      
+</details>
+
+<details>
+  <summary>Wallonia</summary>
+
+  <details>
+    <summary>Full dataset</summary> 
+  
+  ![alt text](image/Wal_corr_matrix_full.png "Title4")     
+  
+  </details>
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Wal_corr_matrix_houses.png "Title5")
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Wal_corr_matrix_flats.png "Title6")
+  
+   </details>
+</details>
+
+<details>
+  <summary>Flandern</summary>
+
+  <details>
+    <summary>Full dataset</summary> 
+  
+  ![alt text](image/Vla_corr_matrix_full.png "Title7")     
+  
+  </details>
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Vla_corr_matrix_houses.png "Title8")
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Vla_corr_matrix_fmats.png "Title9")
+  
+   </details>
+</details>
+
+<details>
+  <summary>Brussels</summary>
+
+  <details>
+    <summary>Full dataset</summary> 
+  
+  ![alt text](image/Bxl_corr_matrix_full.png "Title10")     
+  
+  </details>
+  
+  <details>
+    <summary>Only Houses</summary>
+  
+  ![alt text](image/Bxl_corr_matrix_houses.png "Title11")
+  
+  </details>
+  <details>
+    <summary>Only Flats</summary>
+  
+  ![alt text](image/Bxl_corr_matrix_fmats.png "Title12")
+  
+   </details>
+</details>
+
 ##### Which variables have the greatest influence on the target ?
+
+As one can see, the regions and types of properties influence the correlation scores.
+However, we can extract a few parameters that have mostly higher correlation scores:
+
+- nr_of_rooms
+- area
+- swimming_pool
+- sq_m_price
+- sq_m_land_price
+- region/province
+
 ##### Which variables have the least influence on the target ?
-##### How many qualitative and quantitative variables are there ? How would you transform these values into numerical values ?
-##### Percentage of missing values per column ?
+
+- terrace_area
+- garden
+- kitchen
+- equiped_kitchen_num
+- building_condition_num
 
 ## Data Interpretation
 ##### Are there any outliers? If yes, which ones and why?
