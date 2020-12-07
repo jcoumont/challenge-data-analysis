@@ -40,8 +40,7 @@ This small change allows us to bypass the result page limitation sets by default
 The initial shape is (53.730, 18)
 After the data cleaning, the final shape is (37.813, 28)
 
-#### Structure
-##### Initial structure
+#### Initial structure
 [Acces to the dataset](data/immoweb_scrapped_2.csv) 
 
 <details>
@@ -70,7 +69,7 @@ After the data cleaning, the final shape is (37.813, 28)
 
 </details>
 
-##### Cleaned structure
+#### Cleaned structure
 [Acces to the dataset](data/immoweb_cleaned_2.csv)
 
 <details>
