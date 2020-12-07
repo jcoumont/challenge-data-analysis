@@ -120,7 +120,7 @@ We need to be able to give the price by cities/provinces/regions.
 This price can be expressed in term of global price or price/m2.
 And we have also to identify which parameters can influence it.
 
-
+![alt text](image/data_preview.png "Title1")  
 
 ##### Data quality
 
