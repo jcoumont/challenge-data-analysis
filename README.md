@@ -2,7 +2,8 @@
 - Duration: `3 days`
 - Deadline: `7/12/2020 13:30`
 - Team challenge : 3
-## Contributors
+
+## Team members
 - [Jérôme Coumont](https://githib.com/jcoumont)
 - [Ousmane Diop](https://githib.com/Nooreyni)
 - [Guillaume Gémis](https://githib.com/guigem)
@@ -36,30 +37,33 @@ Rather than use the "whole belgian result pages" we splitted the scaping by "who
 
 This small change allows us to bypass the result page limitation sets by default to 333 pages of 30 results (+/- 10 .000 different entries). After a new scraping run the dataset contains not less than **53.730 real estates entries**.
 
-The shape is (53.730, 18)
+The initial shape is (53.730, 18)
+After the data cleaning, the final shape is (37.813, 27)
 
 #### Structure
 [Acces to the dataset](data/immoweb_scrapped_2.csv) 
- 0   locality             int     zip code  
- 1   type_of_property     str     type of property (house/appartment) 
- 2   subtype_of_property  str     subtype of property (villa/studio/mansion/loft/...) 
- 3   price                int     price
- 4   type_of_sale         str     type of sale 
- 5   nr_of_rooms          int     number of room
- 6   area                 int     area in m2
- 7   equiped_kitchen      str     type of kitchen 
- 8   furnished            bool    is furnished? 
- 9   open_fire            bool    has an open fire?   
- 10  terrace              bool    has a terrace? 
- 11  terrace_area         int     terrace area in m2 if existing
- 12  garden               bool    has garden? 
- 13  garden_area          int     garden area in m2 if existing
- 14  total_land_area      int     total land area in m2
- 15  nr_of_facades        int     number of facades
- 16  swimming_pool        bool    has a swimming pool?
- 17  building_condition   str     state of the building (new/good/to be renovated/ ...) 
- 
-#### Data cleaning
+| #  | Column              | Type |   value   |
+| :- | :------------------ | :--: | :---------|
+| 0  | locality            | int  |   zip code |
+| 1  | type_of_property    | str  |   type of property (house/appartment) |
+| 2  | subtype_of_property | str  |   subtype of property (villa/studio/mansion/loft/...) |
+| 3  | price               | int  |   price |
+| 4  | type_of_sale        | str  |   type of sale |
+| 5  | nr_of_rooms         | int  |   number of room |
+| 6  | area                | int  |   area in m2 |
+| 7  | equiped_kitchen     | str  |   type of kitchen |
+| 8  | furnished           | bool |   is furnished? |
+| 9  | open_fire           | bool |   has an open fire?   |
+| 10 | terrace             | bool |   has a terrace? |
+| 11 | terrace_area        | int  |   terrace area in m2 if existing |
+| 12 | garden              | bool |   has garden? |
+| 13 | garden_area         | int  |   garden area in m2 if existing |
+| 14 | total_land_area     | int  |   total land area in m2 |
+| 15 | nr_of_facades       | int  |   number of facades |
+| 16 | swimming_pool       | bool |   has a swimming pool? |
+| 17 | building_condition  | str  |   state of the building (new/good/to be renovated/ ...) |
+
+## Data cleaning
 This phase is very important to process the analysis phase.
 So we identified our goals and the data's needed to reach them.
 
@@ -67,25 +71,30 @@ We need to be able to give the price by cities/provinces/regions.
 This price can be expressed in term of global price or price/m2.
 And we have also to identify which parameters can influence it.
 
+
+
 ##### Data quality
- 0   locality             53730 non-null  100%
- 1   type_of_property     53730 non-null  100%
- 2   subtype_of_property  53730 non-null  100%
- 3   price                50400 non-null   94%
- 4   type_of_sale         53730 non-null  100%
- 5   nr_of_rooms          50569 non-null   94%
- 6   area                 42463 non-null   79%
- 7   equiped_kitchen      33156 non-null   62%
- 8   furnished            26978 non-null   50%
- 9   open_fire            53730 non-null   100%
- 10  terrace              28758 non-null   54%
- 11  terrace_area         17376 non-null   32%
- 12  garden               14340 non-null   27%
- 13  garden_area           8129 non-null   15%
- 14  total_land_area      28377 non-null   53%
- 15  nr_of_facades        35474 non-null   66%
- 16  swimming_pool        21580 non-null   40%
- 17  building_condition   35860 non-null   67%
+
+| #  | Column              | Non-null |   %   |
+| -: | :------------------ | -------: | ----: |
+| 0  | locality            | 53730    |  100% |
+| 1  | type_of_property    | 53730    |  100% |
+| 2  | subtype_of_property | 53730    |  100% |
+| 3  | price               | 50400    |   94% |
+| 4  | type_of_sale        | 53730    |  100% |
+| 5  | nr_of_rooms         | 50569    |   94% |
+| 6  | area                | 42463    |   79% |
+| 7  | equiped_kitchen     | 33156    |   62% |
+| 8  | furnished           | 26978    |   50% |
+| 9  | open_fire           | 53730    |  100% |
+| 10 | terrace             | 28758    |   54% |
+| 11 | terrace_area        | 17376    |   32% |
+| 12 | garden              | 14340    |   27% |
+| 13 | garden_area         |  8129    |   15% |
+| 14 | total_land_area     | 28377    |   53% |
+| 15 | nr_of_facades       | 35474    |   66% |
+| 16 | swimming_pool       | 21580    |   40% |
+| 17 | building_condition  | 35860    |   67% |
 
 On the global dataset, we only have 904 rows with all informations filled.
 So we have to process some correction and cleaning to achieve our goals.
@@ -100,20 +109,20 @@ In this first step, we have removed :
 ##### Empty value cleaning
 Due the important missing information in the whole dataset, we decided to refine these missing values by:
 * Removing rows that have one of these conditions :
-- empty price
-- empty number of rooms
-- empty area
+  * empty price
+  * empty number of rooms
+  * empty area
 * Filling some missing values :
-- equiped_kitchen : UKN 
-- furnished : False
-- terrace : False
-- terrace_area : -1
-- garden : True if total_land_area > area + terrace_area
-- garden_area : total_land_area - area - terrace_area
-- total land area : area + terrace_area + garden_area
-- swimming_pool : False
-- nr_of_facades : -1
-- building_condition : UKN
+  * equiped_kitchen : UKN 
+  * furnished : False
+  * terrace : False
+  * terrace_area : -1
+  * garden : True if total_land_area > area + terrace_area
+  * garden_area : total_land_area - area - terrace_area
+  * total land area : area + terrace_area + garden_area
+  * swimming_pool : False
+  * nr_of_facades : -1
+  * building_condition : UKN
 
 ##### Adding useful information
 To allow us to explore more efficiently the raw data, we added some columns:
@@ -129,18 +138,58 @@ To be able to have a good correlation map, we converted all non numeric data to 
 - str : int (based on dictionnary of string)
 And rounded float values to 2 decimals
 
+##### Removing non relevant rows
+After a first analysis we identified few rows with suspect values and removed them from the dataset :
+- subtype_of_property = APARTMENT_BLOCK
+- sq_m_price <= 0
+- sq_m_land_price > sq_m_price
+- nr_of_rooms must be present at least 5 times
+- area < nr_of_rooms * 9
+
 ##### Removing non relevant columns
 After a first analysis we identified few columns without any added value and removed them from the dataset :
 - type_of_sale : Only 'FOR_SALE'
 - furnished : less than 50% of filled value and most of them are False
 
 
+## Data Analysis
+##### Which variable is the target ?
+##### How many rows and columns ?
+##### What is the correlation between the variables and the target ? (Why might that be?)
+##### What is the correlation between the variables and the other variables ? (Why?)
+##### Which variables have the greatest influence on the target ?
+##### Which variables have the least influence on the target ?
+##### How many qualitative and quantitative variables are there ? How would you transform these values into numerical values ?
+##### Percentage of missing values per column ?
+
+## Data Interpretation
+##### Are there any outliers? If yes, which ones and why?
+##### Which variables would you delete and why ?
+##### In your opinion, which 5 variables are the most important and why?
+##### What are the most expensive municipalities in Belgium? (Average price, median price, price per square meter)
+##### What are the most expensive municipalities in Wallonia? (Average price, median price, price per square meter)
+##### What are the most expensive municipalities in Flanders? (Average price, median price, price per square meter)
+##### What are the less expensive municipalities in Belgium? (Average price, median price, price per square meter)
+##### What are the less expensive municipalities in Wallonia? (Average price, median price, price per square meter)
+##### What are the less expensive municipalities in Flanders? (Average price, median price, price per square meter)
+##### Bonus : In your opinion, which model of machine learning could solve the task of predicting the sales?
+
 
 ## Usage
-- Usage
+This project was made in different Jupyter Notebooks.
+You can run them separately
+- Data Cleaning : see data_clening.ipynb
+- Data Profiling : see data_profiling.ipynb
+- Data Analysis : see
+- Data Interpretation : see this README.md file
 
 ## Installation
-- Installation
-- What, Why, When, How, Who.
+To run these different Jupyter Notebooks, you need these python module:
+- matplotlib.pyplot
+- numpy
+- pandas
+- pandas_profiling
+- seaborn
+
 ## To do's
 - Pending things to do
