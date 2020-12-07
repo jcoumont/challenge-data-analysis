@@ -45,7 +45,7 @@ After the data cleaning, the final shape is (37.813, 28)
 <details>
   <summary>View detail</summary>
 
-[Acces to the dataset](data/immoweb_scrapped_2.csv) 
+[View file](data/immoweb_scrapped_2.csv) 
 
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
@@ -75,7 +75,7 @@ After the data cleaning, the final shape is (37.813, 28)
 <details>
   <summary>View detail</summary>
 
-[Acces to the dataset](data/immoweb_cleaned_2.csv)
+[View file](data/immoweb_cleaned_2.csv)
 
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
