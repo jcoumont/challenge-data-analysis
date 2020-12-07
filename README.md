@@ -119,10 +119,11 @@ So we identified our goals and the data's needed to reach them.
 We need to be able to give the price by cities/provinces/regions.
 This price can be expressed in term of global price or price/m2.
 And we have also to identify which parameters can influence it.
-
-![alt text](image/data_preview.png "Title1")  
+ 
 
 ##### Data quality
+
+![alt text](image/data_preview.png "Title1") 
 
 | #  | Column              | Non-null |   %   |
 | -: | :------------------ | -------: | ----: |
@@ -503,5 +504,3 @@ To run these different Jupyter Notebooks, you need these python module:
 - pandas_profiling
 - seaborn
 
-## To do's
-- Pending things to do
