@@ -44,8 +44,6 @@ After the data cleaning, the final shape is (37.813, 28)
 ##### Initial structure
 [Acces to the dataset](data/immoweb_scrapped_2.csv) 
 
-<details>
-  <summary>View field detail</summary>
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
 | 0  | locality            | int  |   zip code |
@@ -66,12 +64,10 @@ After the data cleaning, the final shape is (37.813, 28)
 | 15 | nr_of_facades       | int  |   number of facades |
 | 16 | swimming_pool       | bool |   has a swimming pool? |
 | 17 | building_condition  | str  |   state of the building (new/good/to be renovated/ ...) |
-</details>
+
 ##### Cleaned structure
 [Acces to the dataset](data/immoweb_cleaned_2.csv)
-
-<details>
-  <summary>View field detail</summary>  
+  
 | #  | Column              | Type |   value   |
 | :- | :------------------ | :--: | :---------|
 | 0  | locality            | int  |   zip code |
@@ -102,7 +98,6 @@ After the data cleaning, the final shape is (37.813, 28)
 | 25 | building_condition_num  | int | building condition in int value
 | 26 | region_num              | int | region in int value
 | 27 | province_num            | int | province in int value
-<details>
 
 ## Data cleaning
 This phase is very important to process the analysis phase.
